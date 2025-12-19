@@ -199,7 +199,7 @@ def results_table(mo, results, prob_label):
     """Display results table."""
     mo.stop(results is None, mo.md(""))
 
-    results_df = results.to_dataframe()
+    table_df = results.to_dataframe()
     fastest_result = results.get_fastest()
 
     summary = mo.md(f"""
@@ -211,23 +211,26 @@ def results_table(mo, results, prob_label):
     """)
 
     table = mo.ui.table(
-        results_df[[
+        table_df[[
             "solver", "problem", "status", "objective_value",
             "solve_time_mean", "solve_time_std", "setup_time_mean"
         ]].round(6),
         selection=None,
     )
 
-    return results_df, mo.vstack([summary, table])
+    return mo.vstack([summary, table])
 
 
 @app.cell
-def results_chart(mo, alt, results_df):
+def results_chart(mo, alt, results):
     """Display timing chart."""
-    mo.stop(results_df is None or results_df.empty, mo.md(""))
+    mo.stop(results is None, mo.md(""))
+
+    chart_df = results.to_dataframe()
+    mo.stop(chart_df.empty, mo.md(""))
 
     bars = (
-        alt.Chart(results_df)
+        alt.Chart(chart_df)
         .mark_bar()
         .encode(
             x=alt.X("solver:N", title="Solver"),
@@ -239,7 +242,7 @@ def results_chart(mo, alt, results_df):
     )
 
     error_bars = (
-        alt.Chart(results_df)
+        alt.Chart(chart_df)
         .mark_errorbar()
         .encode(
             x=alt.X("solver:N"),
@@ -248,9 +251,11 @@ def results_chart(mo, alt, results_df):
         )
     )
 
+    timing_chart = mo.ui.altair_chart(bars + error_bars)
+
     return mo.vstack([
         mo.md("## Timing Comparison"),
-        mo.ui.altair_chart(bars + error_bars),
+        timing_chart,
     ])
 
 
