@@ -1,0 +1,1 @@
+"""Marimo interactive benchmark application."""
