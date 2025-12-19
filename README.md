@@ -18,7 +18,7 @@ A benchmarking framework for Python optimization and operations research solvers
 | [OR-Tools](https://developers.google.com/optimization)          | LP, MIP, CP | Planned |
 | [Pyomo](http://www.pyomo.org/)                                  | LP, MIP, NLP| Planned |
 | [SciPy](https://docs.scipy.org/doc/scipy/reference/optimize.html)| LP, NLP    | Planned |
-| [solvOR](https://github.com/yourrepo/solvor)                    | LP, MIP, CP | Planned |
+| [solvOR](https://github.com/StevenBtw/solvor)                    | LP, MIP, CP | Planned |
 | [PuLP](https://coin-or.github.io/pulp/)                         | LP, MIP     | Planned |
 
 ## Installation
@@ -27,7 +27,7 @@ Requires [uv](https://docs.astral.sh/uv/) for package management.
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/benchmORk.git
+git clone https://github.com/StevenBtw/benchmORk.git
 cd benchmORk
 
 # Install with all dependencies
