@@ -1,0 +1,131 @@
+# Solver Configuration
+# Maps solvers to the problem types they support
+#
+# Format: {tool}_{solver}
+# - tool: The library/package (scipy, pulp, ortools, pyomo, solvor)
+# - solver: The specific solver/algorithm within that tool
+
+solvers:
+  # SciPy solvers
+  scipy_highs:
+    tool: scipy
+    solver: highs
+    display_name: "SciPy HiGHS"
+    problem_types:
+      - linear
+    description: "HiGHS LP solver via SciPy"
+
+  scipy_simplex:
+    tool: scipy
+    solver: simplex
+    display_name: "SciPy Simplex"
+    problem_types:
+      - linear
+    description: "Revised Simplex method via SciPy"
+
+  # PuLP solvers
+  pulp_cbc:
+    tool: pulp
+    solver: cbc
+    display_name: "PuLP CBC"
+    problem_types:
+      - linear
+      - integer
+    description: "COIN-OR CBC solver via PuLP"
+
+  pulp_glpk:
+    tool: pulp
+    solver: glpk
+    display_name: "PuLP GLPK"
+    problem_types:
+      - linear
+      - integer
+    description: "GNU Linear Programming Kit via PuLP"
+
+  # OR-Tools solvers (planned)
+  ortools_glop:
+    tool: ortools
+    solver: glop
+    display_name: "OR-Tools GLOP"
+    problem_types:
+      - linear
+    description: "Google's LP solver"
+    planned: true
+
+  ortools_cpsat:
+    tool: ortools
+    solver: cpsat
+    display_name: "OR-Tools CP-SAT"
+    problem_types:
+      - integer
+      - constraint_satisfaction
+    description: "Constraint Programming SAT solver"
+    planned: true
+
+  ortools_scip:
+    tool: ortools
+    solver: scip
+    display_name: "OR-Tools SCIP"
+    problem_types:
+      - linear
+      - integer
+    description: "SCIP MIP solver via OR-Tools"
+    planned: true
+
+  # Pyomo solvers (planned)
+  pyomo_glpk:
+    tool: pyomo
+    solver: glpk
+    display_name: "Pyomo GLPK"
+    problem_types:
+      - linear
+      - integer
+    description: "GLPK via Pyomo"
+    planned: true
+
+  pyomo_cbc:
+    tool: pyomo
+    solver: cbc
+    display_name: "Pyomo CBC"
+    problem_types:
+      - linear
+      - integer
+    description: "CBC via Pyomo"
+    planned: true
+
+  # solvOR solvers (planned)
+  solvor_simplex:
+    tool: solvor
+    solver: simplex
+    display_name: "solvOR Simplex"
+    problem_types:
+      - linear
+    description: "Pure Python Simplex implementation"
+    planned: true
+
+  solvor_milp:
+    tool: solvor
+    solver: milp
+    display_name: "solvOR MILP"
+    problem_types:
+      - integer
+    description: "Branch and bound MIP solver"
+    planned: true
+
+# Problem type definitions
+problem_types:
+  linear:
+    display_name: "Linear Programming (LP)"
+    description: "Continuous variables, linear objective and constraints"
+
+  integer:
+    display_name: "Mixed Integer Programming (MIP)"
+    description: "Integer or mixed integer-continuous variables"
+
+  nonlinear:
+    display_name: "Nonlinear Programming (NLP)"
+    description: "Nonlinear objective or constraints"
+
+  constraint_satisfaction:
+    display_name: "Constraint Programming (CP)"
+    description: "Constraint satisfaction and optimization"
