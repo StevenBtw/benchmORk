@@ -13,13 +13,18 @@ A benchmarking framework for Python optimization and operations research solvers
 
 ## Supported Solvers
 
-| Solver                                                          | Type        | Status  |
-| --------------------------------------------------------------- | ----------- | ------- |
-| [OR-Tools](https://developers.google.com/optimization)          | LP, MIP, CP | Planned |
-| [Pyomo](http://www.pyomo.org/)                                  | LP, MIP, NLP| Planned |
-| [SciPy](https://docs.scipy.org/doc/scipy/reference/optimize.html)| LP, NLP    | Planned |
-| [solvOR](https://github.com/StevenBtw/solvor)                    | LP, MIP, CP | Planned |
-| [PuLP](https://coin-or.github.io/pulp/)                         | LP, MIP     | Planned |
+## Supported Solvers
+
+| Solver | Type | Status |
+|--------|------|--------|
+| [OR-Tools](https://developers.google.com/optimization) | LP, MIP, CP | Planned |
+| [Pyomo](http://www.pyomo.org/) | LP, MIP, NLP | Planned |
+| [SciPy](https://docs.scipy.org/doc/scipy/reference/optimize.html) | LP, MIP, NLP | Planned |
+| [solvOR](https://github.com/StevenBtw/solvor) | LP, MIP, CP, NLP, Graph | Planned |
+| [PuLP](https://coin-or.github.io/pulp/) | LP, MIP | Planned |
+| [HiGHS](https://highs.dev/) | LP, MIP, QP | Planned |
+| [CVXPY](https://www.cvxpy.org/) | LP, QP, SOCP, SDP | Planned |
+| [Gurobi](https://www.gurobi.com/) | LP, MIP, QP, MIQP | Planned |
 
 ## Installation
 
