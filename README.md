@@ -30,8 +30,8 @@ Requires [uv](https://docs.astral.sh/uv/) for package management.
 git clone https://github.com/StevenBtw/benchmORk.git
 cd benchmORk
 
-# Install with all dependencies
-uv sync --all-extras
+# Install all dependencies 
+uv sync
 ```
 
 ## Quick Start
