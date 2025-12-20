@@ -97,17 +97,65 @@ print(results.summary())
 - Transportation problem
 - Diet problem
 - Blending problem
+- Production planning
 
 ### Mixed Integer Programming (MIP)
 
 - Knapsack problem
 - Assignment problem
 - Traveling Salesman (TSP)
+- Bin packing
+- Set covering / Set partitioning
+- Facility location
+- Vehicle routing (VRP)
+- Job shop scheduling
+- Graph coloring
 
 ### Nonlinear Programming (NLP)
 
 - Rosenbrock function
-- Portfolio optimization
+- Portfolio optimization (Markowitz)
+- Rastrigin function
+- Ackley function
+- Sphere function
+
+### SAT / Constraint Satisfaction
+
+- N-Queens
+- Sudoku
+- Graph coloring (SAT encoding)
+- Random 3-SAT
+- Pigeonhole principle
+
+### Pathfinding
+
+- Maze solving
+- Grid navigation
+- Shortest path (weighted/unweighted)
+- All-pairs shortest paths
+
+### Network Flow & MST
+
+- Maximum flow
+- Minimum cost flow
+- Minimum spanning tree
+
+### Exact Cover
+
+- Pentomino tiling
+- Sudoku (exact cover encoding)
+- N-Queens (exact cover encoding)
+
+### Metaheuristics
+
+- Quadratic Assignment (QAP)
+- Flow shop scheduling
+- Permutation flow shop
+
+### Black-box Optimization
+
+- Hyperparameter tuning (synthetic)
+- Noisy function optimization
 
 ## Configuration
 
