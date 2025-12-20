@@ -192,4 +192,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and guidelines.
 
 ## License
 
-Apache-2.0 License - see [LICENSE](LICENSE) for details.
+[Apache 2.0 License](LICENSE), free for personal and commercial use. 
