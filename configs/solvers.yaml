@@ -149,6 +149,34 @@ solvers:
       - combinatorial
     description: "Genetic algorithm metaheuristic via solvOR"
 
+  # NetworkX graph solvers
+  networkx_dijkstra:
+    tool: networkx
+    solver: dijkstra
+    display_name: "NetworkX Dijkstra"
+    problem_types:
+      - graph
+      - combinatorial
+    description: "Dijkstra's shortest path algorithm via NetworkX"
+
+  networkx_maxflow:
+    tool: networkx
+    solver: maxflow
+    display_name: "NetworkX Max Flow"
+    problem_types:
+      - graph
+      - combinatorial
+    description: "Edmonds-Karp maximum flow algorithm via NetworkX"
+
+  networkx_mincost:
+    tool: networkx
+    solver: mincost
+    display_name: "NetworkX Min Cost Flow"
+    problem_types:
+      - graph
+      - combinatorial
+    description: "Network simplex minimum cost flow via NetworkX"
+
 # Problem type definitions
 problem_types:
   linear:
@@ -170,3 +198,7 @@ problem_types:
   combinatorial:
     display_name: "Combinatorial Optimization"
     description: "Discrete optimization problems like TSP, knapsack, assignment"
+
+  graph:
+    display_name: "Graph Algorithms"
+    description: "Graph optimization problems like shortest path, max flow, min cost flow"

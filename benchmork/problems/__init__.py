@@ -9,6 +9,11 @@ from benchmork.problems.combinatorial import (
     TSPProblem,
     BinPackingProblem,
 )
+from benchmork.problems.graph import (
+    ShortestPathProblem,
+    MaxFlowProblem,
+    MinCostFlowProblem,
+)
 
 __all__ = [
     "BaseProblem",
@@ -24,4 +29,8 @@ __all__ = [
     "AssignmentProblem",
     "TSPProblem",
     "BinPackingProblem",
+    # Graph problems
+    "ShortestPathProblem",
+    "MaxFlowProblem",
+    "MinCostFlowProblem",
 ]

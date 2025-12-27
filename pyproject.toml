@@ -1,6 +1,6 @@
 [project]
 name = "benchmORk"
-version = "0.2.0"
+version = "0.1.0"
 description = "BenchmORk your optimization solvers."
 readme = "README.md"
 requires-python = ">=3.13"
@@ -29,6 +29,7 @@ dependencies = [
     "pandas>=2.0.0",
     "pyyaml>=6.0",
     "psutil>=7.1.3",
+    "networkx>=3.6.1",
 ]
 
 [project.optional-dependencies]

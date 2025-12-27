@@ -13,6 +13,7 @@ class ProblemType(Enum):
     INTEGER = "integer"
     NONLINEAR = "nonlinear"
     CONSTRAINT_SATISFACTION = "constraint_satisfaction"
+    COMBINATORIAL = "combinatorial"
 
 
 @dataclass

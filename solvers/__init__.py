@@ -21,6 +21,11 @@ from solvers.pyomo_solver import (
     PyomoIpoptSolver,
     PyomoSolver,
 )
+from solvers.networkx_solver import (
+    NetworkxShortestPathSolver,
+    NetworkxMaxFlowSolver,
+    NetworkxMinCostFlowSolver,
+)
 
 __all__ = [
     "BaseSolver",
@@ -51,6 +56,10 @@ __all__ = [
     "SolvorAnnealSolver",
     "SolvorTabuSolver",
     "SolvorGeneticSolver",
+    # NetworkX solvers
+    "NetworkxShortestPathSolver",
+    "NetworkxMaxFlowSolver",
+    "NetworkxMinCostFlowSolver",
 ]
 
 # Registry mapping solver names to classes
@@ -75,6 +84,10 @@ SOLVER_REGISTRY: dict[str, type[BaseSolver]] = {
     "solvor_anneal": SolvorAnnealSolver,
     "solvor_tabu": SolvorTabuSolver,
     "solvor_genetic": SolvorGeneticSolver,
+    # NetworkX
+    "networkx_dijkstra": NetworkxShortestPathSolver,
+    "networkx_maxflow": NetworkxMaxFlowSolver,
+    "networkx_mincost": NetworkxMinCostFlowSolver,
 }
 
 

@@ -15,6 +15,14 @@ from benchmork.validate import (
     check_non_negative,
     check_in_range,
 )
+from benchmork.instances import (
+    Instance,
+    InstanceGenerator,
+    InstanceLibrary,
+    load_instance,
+    save_instance,
+    load_tsplib,
+)
 
 __version__ = "0.2.0"
 
@@ -37,4 +45,11 @@ __all__ = [
     "check_positive",
     "check_non_negative",
     "check_in_range",
+    # Instance management
+    "Instance",
+    "InstanceGenerator",
+    "InstanceLibrary",
+    "load_instance",
+    "save_instance",
+    "load_tsplib",
 ]
