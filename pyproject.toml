@@ -1,6 +1,6 @@
 [project]
 name = "benchmORk"
-version = "0.1.0"
+version = "0.2.0"
 description = "BenchmORk your optimization solvers."
 readme = "README.md"
 requires-python = ">=3.13"
@@ -37,7 +37,8 @@ ortools = ["ortools>=9.7"]
 pyomo = ["pyomo>=6.6"]
 scipy = ["scipy>=1.11"]
 pulp = ["pulp>=3.3.0"]
-solvor = ["solvor>=0.3.5"]
+solvor = ["solvor>=0.5.1"]
+networkx = ["networkx>=3.0"]
 
 # All solvers
 all = [
@@ -46,6 +47,7 @@ all = [
     "scipy>=1.11",
     "pulp>=3.3.0",
     "solvor>=0.5.1",
+    "networkx>=3.0",
 ]
 
 # Marimo app

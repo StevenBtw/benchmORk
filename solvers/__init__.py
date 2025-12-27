@@ -4,6 +4,18 @@ from solvers.base import BaseSolver, SolverResult, SolverStatus
 from solvers.scipy_solver import ScipyHighsSolver, ScipySimplexSolver, ScipySolver
 from solvers.pulp_solver import PulpCbcSolver, PulpGlpkSolver, PulpSolver
 from solvers.solvor_solver import SolvorCPSATSolver, SolvorSolver
+from solvers.ortools_solver import (
+    OrtoolsGlopSolver,
+    OrtoolsCpsatSolver,
+    OrtoolsScipSolver,
+    OrtoolsSolver,
+)
+from solvers.pyomo_solver import (
+    PyomoGlpkSolver,
+    PyomoCbcSolver,
+    PyomoIpoptSolver,
+    PyomoSolver,
+)
 
 __all__ = [
     "BaseSolver",
@@ -17,6 +29,16 @@ __all__ = [
     "PulpCbcSolver",
     "PulpGlpkSolver",
     "PulpSolver",  # Legacy alias
+    # OR-Tools solvers
+    "OrtoolsGlopSolver",
+    "OrtoolsCpsatSolver",
+    "OrtoolsScipSolver",
+    "OrtoolsSolver",  # Legacy alias
+    # Pyomo solvers
+    "PyomoGlpkSolver",
+    "PyomoCbcSolver",
+    "PyomoIpoptSolver",
+    "PyomoSolver",  # Legacy alias
     # solvOR solvers
     "SolvorCPSATSolver",
     "SolvorSolver",  # Legacy alias
@@ -24,10 +46,21 @@ __all__ = [
 
 # Registry mapping solver names to classes
 SOLVER_REGISTRY: dict[str, type[BaseSolver]] = {
+    # SciPy
     "scipy_highs": ScipyHighsSolver,
     "scipy_simplex": ScipySimplexSolver,
+    # PuLP
     "pulp_cbc": PulpCbcSolver,
     "pulp_glpk": PulpGlpkSolver,
+    # OR-Tools
+    "ortools_glop": OrtoolsGlopSolver,
+    "ortools_cpsat": OrtoolsCpsatSolver,
+    "ortools_scip": OrtoolsScipSolver,
+    # Pyomo
+    "pyomo_glpk": PyomoGlpkSolver,
+    "pyomo_cbc": PyomoCbcSolver,
+    "pyomo_ipopt": PyomoIpoptSolver,
+    # solvOR
     "solvor_cpsat": SolvorCPSATSolver,
 }
 

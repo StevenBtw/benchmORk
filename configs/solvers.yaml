@@ -42,7 +42,7 @@ solvers:
       - integer
     description: "GNU Linear Programming Kit via PuLP"
 
-  # OR-Tools solvers (planned)
+  # OR-Tools solvers
   ortools_glop:
     tool: ortools
     solver: glop
@@ -50,7 +50,6 @@ solvers:
     problem_types:
       - linear
     description: "Google's LP solver"
-    planned: true
 
   ortools_cpsat:
     tool: ortools
@@ -60,7 +59,6 @@ solvers:
       - integer
       - constraint_satisfaction
     description: "Constraint Programming SAT solver"
-    planned: true
 
   ortools_scip:
     tool: ortools
@@ -70,9 +68,8 @@ solvers:
       - linear
       - integer
     description: "SCIP MIP solver via OR-Tools"
-    planned: true
 
-  # Pyomo solvers (planned)
+  # Pyomo solvers
   pyomo_glpk:
     tool: pyomo
     solver: glpk
@@ -81,7 +78,6 @@ solvers:
       - linear
       - integer
     description: "GLPK via Pyomo"
-    planned: true
 
   pyomo_cbc:
     tool: pyomo
@@ -91,9 +87,25 @@ solvers:
       - linear
       - integer
     description: "CBC via Pyomo"
-    planned: true
 
-  # solvOR solvers (planned)
+  pyomo_ipopt:
+    tool: pyomo
+    solver: ipopt
+    display_name: "Pyomo IPOPT"
+    problem_types:
+      - linear
+      - nonlinear
+    description: "Interior Point Optimizer via Pyomo"
+
+  # solvOR solvers
+  solvor_cpsat:
+    tool: solvor
+    solver: cpsat
+    display_name: "solvOR CP-SAT"
+    problem_types:
+      - constraint_satisfaction
+    description: "Constraint Programming solver via solvOR"
+
   solvor_simplex:
     tool: solvor
     solver: simplex
