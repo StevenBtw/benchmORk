@@ -225,15 +225,17 @@ class OrtoolsCpsatSolver(BaseSolver):
             else:
                 model.Maximize(sum(int(c[i]) * variables[i] for i in range(n_vars)))
 
-        A_ub = problem_data.constraints.get("A_ub") or []
-        b_ub = problem_data.constraints.get("b_ub") or []
-        for row, rhs in zip(A_ub, b_ub):
-            model.Add(sum(int(row[j]) * variables[j] for j in range(len(row))) <= int(rhs))
+        A_ub = problem_data.constraints.get("A_ub")
+        b_ub = problem_data.constraints.get("b_ub")
+        if A_ub is not None and b_ub is not None:
+            for row, rhs in zip(A_ub, b_ub):
+                model.Add(sum(int(row[j]) * variables[j] for j in range(len(row))) <= int(rhs))
 
-        A_eq = problem_data.constraints.get("A_eq") or []
-        b_eq = problem_data.constraints.get("b_eq") or []
-        for row, rhs in zip(A_eq, b_eq):
-            model.Add(sum(int(row[j]) * variables[j] for j in range(len(row))) == int(rhs))
+        A_eq = problem_data.constraints.get("A_eq")
+        b_eq = problem_data.constraints.get("b_eq")
+        if A_eq is not None and b_eq is not None:
+            for row, rhs in zip(A_eq, b_eq):
+                model.Add(sum(int(row[j]) * variables[j] for j in range(len(row))) == int(rhs))
 
         solver = cp_model.CpSolver()
         if self._time_limit:

@@ -124,6 +124,31 @@ solvers:
     description: "Branch and bound MIP solver"
     planned: true
 
+  # solvOR metaheuristic solvers
+  solvor_anneal:
+    tool: solvor
+    solver: anneal
+    display_name: "solvOR Simulated Annealing"
+    problem_types:
+      - combinatorial
+    description: "Simulated annealing metaheuristic via solvOR"
+
+  solvor_tabu:
+    tool: solvor
+    solver: tabu
+    display_name: "solvOR Tabu Search"
+    problem_types:
+      - combinatorial
+    description: "Tabu search metaheuristic via solvOR"
+
+  solvor_genetic:
+    tool: solvor
+    solver: genetic
+    display_name: "solvOR Genetic Algorithm"
+    problem_types:
+      - combinatorial
+    description: "Genetic algorithm metaheuristic via solvOR"
+
 # Problem type definitions
 problem_types:
   linear:
@@ -141,3 +166,7 @@ problem_types:
   constraint_satisfaction:
     display_name: "Constraint Programming (CP)"
     description: "Constraint satisfaction and optimization"
+
+  combinatorial:
+    display_name: "Combinatorial Optimization"
+    description: "Discrete optimization problems like TSP, knapsack, assignment"

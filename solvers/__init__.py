@@ -4,6 +4,11 @@ from solvers.base import BaseSolver, SolverResult, SolverStatus
 from solvers.scipy_solver import ScipyHighsSolver, ScipySimplexSolver, ScipySolver
 from solvers.pulp_solver import PulpCbcSolver, PulpGlpkSolver, PulpSolver
 from solvers.solvor_solver import SolvorCPSATSolver, SolvorSolver
+from solvers.solvor_metaheuristics import (
+    SolvorAnnealSolver,
+    SolvorTabuSolver,
+    SolvorGeneticSolver,
+)
 from solvers.ortools_solver import (
     OrtoolsGlopSolver,
     OrtoolsCpsatSolver,
@@ -42,6 +47,10 @@ __all__ = [
     # solvOR solvers
     "SolvorCPSATSolver",
     "SolvorSolver",  # Legacy alias
+    # solvOR metaheuristics
+    "SolvorAnnealSolver",
+    "SolvorTabuSolver",
+    "SolvorGeneticSolver",
 ]
 
 # Registry mapping solver names to classes
@@ -62,6 +71,10 @@ SOLVER_REGISTRY: dict[str, type[BaseSolver]] = {
     "pyomo_ipopt": PyomoIpoptSolver,
     # solvOR
     "solvor_cpsat": SolvorCPSATSolver,
+    # solvOR metaheuristics
+    "solvor_anneal": SolvorAnnealSolver,
+    "solvor_tabu": SolvorTabuSolver,
+    "solvor_genetic": SolvorGeneticSolver,
 }
 
 

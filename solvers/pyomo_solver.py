@@ -104,17 +104,19 @@ class PyomoGlpkSolver(BaseSolver):
         else:
             model.obj = pyo.Objective(rule=objective_rule, sense=pyo.maximize)
 
-        A_ub = problem_data.constraints.get("A_ub") or []
-        b_ub = problem_data.constraints.get("b_ub") or []
+        A_ub = problem_data.constraints.get("A_ub")
+        b_ub = problem_data.constraints.get("b_ub")
         model.ub_constraints = pyo.ConstraintList()
-        for row, rhs in zip(A_ub, b_ub):
-            model.ub_constraints.add(sum(row[j] * model.x[j] for j in range(len(row))) <= rhs)
+        if A_ub is not None and b_ub is not None:
+            for row, rhs in zip(A_ub, b_ub):
+                model.ub_constraints.add(sum(row[j] * model.x[j] for j in range(len(row))) <= rhs)
 
-        A_eq = problem_data.constraints.get("A_eq") or []
-        b_eq = problem_data.constraints.get("b_eq") or []
+        A_eq = problem_data.constraints.get("A_eq")
+        b_eq = problem_data.constraints.get("b_eq")
         model.eq_constraints = pyo.ConstraintList()
-        for row, rhs in zip(A_eq, b_eq):
-            model.eq_constraints.add(sum(row[j] * model.x[j] for j in range(len(row))) == rhs)
+        if A_eq is not None and b_eq is not None:
+            for row, rhs in zip(A_eq, b_eq):
+                model.eq_constraints.add(sum(row[j] * model.x[j] for j in range(len(row))) == rhs)
 
         solver = SolverFactory("glpk")
         options: dict[str, Any] = {}
@@ -255,17 +257,19 @@ class PyomoCbcSolver(BaseSolver):
         else:
             model.obj = pyo.Objective(rule=objective_rule, sense=pyo.maximize)
 
-        A_ub = problem_data.constraints.get("A_ub") or []
-        b_ub = problem_data.constraints.get("b_ub") or []
+        A_ub = problem_data.constraints.get("A_ub")
+        b_ub = problem_data.constraints.get("b_ub")
         model.ub_constraints = pyo.ConstraintList()
-        for row, rhs in zip(A_ub, b_ub):
-            model.ub_constraints.add(sum(row[j] * model.x[j] for j in range(len(row))) <= rhs)
+        if A_ub is not None and b_ub is not None:
+            for row, rhs in zip(A_ub, b_ub):
+                model.ub_constraints.add(sum(row[j] * model.x[j] for j in range(len(row))) <= rhs)
 
-        A_eq = problem_data.constraints.get("A_eq") or []
-        b_eq = problem_data.constraints.get("b_eq") or []
+        A_eq = problem_data.constraints.get("A_eq")
+        b_eq = problem_data.constraints.get("b_eq")
         model.eq_constraints = pyo.ConstraintList()
-        for row, rhs in zip(A_eq, b_eq):
-            model.eq_constraints.add(sum(row[j] * model.x[j] for j in range(len(row))) == rhs)
+        if A_eq is not None and b_eq is not None:
+            for row, rhs in zip(A_eq, b_eq):
+                model.eq_constraints.add(sum(row[j] * model.x[j] for j in range(len(row))) == rhs)
 
         solver = SolverFactory("cbc")
         options: dict[str, Any] = {}
@@ -403,17 +407,19 @@ class PyomoIpoptSolver(BaseSolver):
         else:
             model.obj = pyo.Objective(rule=objective_rule, sense=pyo.maximize)
 
-        A_ub = problem_data.constraints.get("A_ub") or []
-        b_ub = problem_data.constraints.get("b_ub") or []
+        A_ub = problem_data.constraints.get("A_ub")
+        b_ub = problem_data.constraints.get("b_ub")
         model.ub_constraints = pyo.ConstraintList()
-        for row, rhs in zip(A_ub, b_ub):
-            model.ub_constraints.add(sum(row[j] * model.x[j] for j in range(len(row))) <= rhs)
+        if A_ub is not None and b_ub is not None:
+            for row, rhs in zip(A_ub, b_ub):
+                model.ub_constraints.add(sum(row[j] * model.x[j] for j in range(len(row))) <= rhs)
 
-        A_eq = problem_data.constraints.get("A_eq") or []
-        b_eq = problem_data.constraints.get("b_eq") or []
+        A_eq = problem_data.constraints.get("A_eq")
+        b_eq = problem_data.constraints.get("b_eq")
         model.eq_constraints = pyo.ConstraintList()
-        for row, rhs in zip(A_eq, b_eq):
-            model.eq_constraints.add(sum(row[j] * model.x[j] for j in range(len(row))) == rhs)
+        if A_eq is not None and b_eq is not None:
+            for row, rhs in zip(A_eq, b_eq):
+                model.eq_constraints.add(sum(row[j] * model.x[j] for j in range(len(row))) == rhs)
 
         solver = SolverFactory("ipopt")
         options: dict[str, Any] = {"print_level": 0}
