@@ -3,6 +3,7 @@
 from solvers.base import BaseSolver, SolverResult, SolverStatus
 from solvers.scipy_solver import ScipyHighsSolver, ScipySimplexSolver, ScipySolver
 from solvers.pulp_solver import PulpCbcSolver, PulpGlpkSolver, PulpSolver
+from solvers.solvor_solver import SolvorCPSATSolver, SolvorSolver
 
 __all__ = [
     "BaseSolver",
@@ -16,6 +17,9 @@ __all__ = [
     "PulpCbcSolver",
     "PulpGlpkSolver",
     "PulpSolver",  # Legacy alias
+    # solvOR solvers
+    "SolvorCPSATSolver",
+    "SolvorSolver",  # Legacy alias
 ]
 
 # Registry mapping solver names to classes
@@ -24,6 +28,7 @@ SOLVER_REGISTRY: dict[str, type[BaseSolver]] = {
     "scipy_simplex": ScipySimplexSolver,
     "pulp_cbc": PulpCbcSolver,
     "pulp_glpk": PulpGlpkSolver,
+    "solvor_cpsat": SolvorCPSATSolver,
 }
 
 
