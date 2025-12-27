@@ -1,7 +1,7 @@
 [project]
-name = "benchmork"
+name = "benchmORk"
 version = "0.1.0"
-description = "Benchmark your optimization solvers."
+description = "BenchmORk your optimization solvers."
 readme = "README.md"
 requires-python = ">=3.13"
 authors = [
@@ -29,6 +29,7 @@ dependencies = [
     "pandas>=2.0.0",
     "pyyaml>=6.0",
     "psutil>=7.1.3",
+    "networkx>=3.6.1",
 ]
 
 [project.optional-dependencies]
@@ -37,7 +38,8 @@ ortools = ["ortools>=9.7"]
 pyomo = ["pyomo>=6.6"]
 scipy = ["scipy>=1.11"]
 pulp = ["pulp>=3.3.0"]
-solvor = ["solvor>=0.3.5"]
+solvor = ["solvor>=0.5.1"]
+networkx = ["networkx>=3.0"]
 
 # All solvers
 all = [
@@ -45,7 +47,8 @@ all = [
     "pyomo>=6.6",
     "scipy>=1.11",
     "pulp>=3.3.0",
-    "solvor>=0.3.5",
+    "solvor>=0.5.1",
+    "networkx>=3.0",
 ]
 
 # Marimo app
@@ -75,7 +78,7 @@ full = [
 Repository = "https://github.com/StevenBtw/benchmORk"
 
 [project.scripts]
-benchmork = "benchmork.runner:main"
+benchmork = "benchmork.cli:main"
 
 [build-system]
 requires = ["hatchling"]

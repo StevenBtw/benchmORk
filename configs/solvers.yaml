@@ -42,7 +42,7 @@ solvers:
       - integer
     description: "GNU Linear Programming Kit via PuLP"
 
-  # OR-Tools solvers (planned)
+  # OR-Tools solvers
   ortools_glop:
     tool: ortools
     solver: glop
@@ -50,7 +50,6 @@ solvers:
     problem_types:
       - linear
     description: "Google's LP solver"
-    planned: true
 
   ortools_cpsat:
     tool: ortools
@@ -60,7 +59,6 @@ solvers:
       - integer
       - constraint_satisfaction
     description: "Constraint Programming SAT solver"
-    planned: true
 
   ortools_scip:
     tool: ortools
@@ -70,9 +68,8 @@ solvers:
       - linear
       - integer
     description: "SCIP MIP solver via OR-Tools"
-    planned: true
 
-  # Pyomo solvers (planned)
+  # Pyomo solvers
   pyomo_glpk:
     tool: pyomo
     solver: glpk
@@ -81,7 +78,6 @@ solvers:
       - linear
       - integer
     description: "GLPK via Pyomo"
-    planned: true
 
   pyomo_cbc:
     tool: pyomo
@@ -91,9 +87,25 @@ solvers:
       - linear
       - integer
     description: "CBC via Pyomo"
-    planned: true
 
-  # solvOR solvers (planned)
+  pyomo_ipopt:
+    tool: pyomo
+    solver: ipopt
+    display_name: "Pyomo IPOPT"
+    problem_types:
+      - linear
+      - nonlinear
+    description: "Interior Point Optimizer via Pyomo"
+
+  # solvOR solvers
+  solvor_cpsat:
+    tool: solvor
+    solver: cpsat
+    display_name: "solvOR CP-SAT"
+    problem_types:
+      - constraint_satisfaction
+    description: "Constraint Programming solver via solvOR"
+
   solvor_simplex:
     tool: solvor
     solver: simplex
@@ -112,6 +124,59 @@ solvers:
     description: "Branch and bound MIP solver"
     planned: true
 
+  # solvOR metaheuristic solvers
+  solvor_anneal:
+    tool: solvor
+    solver: anneal
+    display_name: "solvOR Simulated Annealing"
+    problem_types:
+      - combinatorial
+    description: "Simulated annealing metaheuristic via solvOR"
+
+  solvor_tabu:
+    tool: solvor
+    solver: tabu
+    display_name: "solvOR Tabu Search"
+    problem_types:
+      - combinatorial
+    description: "Tabu search metaheuristic via solvOR"
+
+  solvor_genetic:
+    tool: solvor
+    solver: genetic
+    display_name: "solvOR Genetic Algorithm"
+    problem_types:
+      - combinatorial
+    description: "Genetic algorithm metaheuristic via solvOR"
+
+  # NetworkX graph solvers
+  networkx_dijkstra:
+    tool: networkx
+    solver: dijkstra
+    display_name: "NetworkX Dijkstra"
+    problem_types:
+      - graph
+      - combinatorial
+    description: "Dijkstra's shortest path algorithm via NetworkX"
+
+  networkx_maxflow:
+    tool: networkx
+    solver: maxflow
+    display_name: "NetworkX Max Flow"
+    problem_types:
+      - graph
+      - combinatorial
+    description: "Edmonds-Karp maximum flow algorithm via NetworkX"
+
+  networkx_mincost:
+    tool: networkx
+    solver: mincost
+    display_name: "NetworkX Min Cost Flow"
+    problem_types:
+      - graph
+      - combinatorial
+    description: "Network simplex minimum cost flow via NetworkX"
+
 # Problem type definitions
 problem_types:
   linear:
@@ -129,3 +194,11 @@ problem_types:
   constraint_satisfaction:
     display_name: "Constraint Programming (CP)"
     description: "Constraint satisfaction and optimization"
+
+  combinatorial:
+    display_name: "Combinatorial Optimization"
+    description: "Discrete optimization problems like TSP, knapsack, assignment"
+
+  graph:
+    display_name: "Graph Algorithms"
+    description: "Graph optimization problems like shortest path, max flow, min cost flow"
