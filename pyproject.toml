@@ -78,7 +78,7 @@ full = [
 Repository = "https://github.com/StevenBtw/benchmORk"
 
 [project.scripts]
-benchmork = "benchmork.runner:main"
+benchmork = "benchmork.cli:main"
 
 [build-system]
 requires = ["hatchling"]
