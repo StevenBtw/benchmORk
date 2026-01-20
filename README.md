@@ -108,11 +108,11 @@ print(results.summary())
 
 - Knapsack problem
 - Assignment problem
-- Traveling Salesman (TSP)
+- Traveling Salesman problem (TSP)
 - Bin packing
 - Set covering / Set partitioning
 - Facility location
-- Vehicle routing (VRP)
+- Vehicle routing problem (VRP)
 - Job shop scheduling
 - Graph coloring
 
